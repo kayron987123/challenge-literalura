@@ -10,4 +10,9 @@ public interface LibroRepository extends JpaRepository<Libro, Long> {
 
     @Query("SELECT l FROM Libro l WHERE 'en' MEMBER OF l.idiomas")
     List<Libro> getLibrosWhereIdiomasIsEn();
+
+    @Query("SELECT l FROM Libro l WHERE 'fr' MEMBER OF l.idiomas")
+    List<Libro> getLibrosPorIdiomasEnFrances();
+
+    List<Libro> findTop10ByOrderByNumeroDescargaDesc();
 }
